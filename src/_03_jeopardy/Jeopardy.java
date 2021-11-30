@@ -51,33 +51,47 @@ public class Jeopardy implements ActionListener {
 		frame.setLayout(new BorderLayout());
 
 		// 1. Make the frame show up
-
+frame.setVisible(true);
 		// 2. Give your frame a title
-
+frame.setTitle("Jeopardy");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
-
+JPanel panel = new JPanel();
+panel=createHeader("Time to play!");
 		// 4. Add the header component to the quizPanel
-
+quizPanel.add(panel);
 		// 5. Add the quizPanel to the frame
-
+frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-
+firstButton.isShowing();
+firstButton =createButton("100");
 		// 7. Add the firstButton to the quizPanel
-
+quizPanel.add(firstButton);
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-
+secondButton=createButton("200");
 		// 10. Add the secondButton to the quizPanel
-
+quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
-
-		// 12. Write the code to complete the actionPerformed() method below
+firstButton.addActionListener(this);
+secondButton.addActionListener(this);	// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
+		JButton thirdButton = new JButton();
+		JButton fourButton = new JButton();
+		JButton fiveButton = new JButton();
+		JButton sixButton = new JButton();
 		
+		thirdButton=createButton("400");
+		fourButton=createButton("600");
+		fiveButton=createButton("800");
+		sixButton=createButton("1000");
+		quizPanel.add(thirdButton);
+		quizPanel.add(fourButton);
+		quizPanel.add(fiveButton);
+		quizPanel.add(sixButton);
 		 /*
 		 * [optional] Use the showImage or playSound methods when the user answers a
 		 * question
@@ -94,9 +108,9 @@ public class Jeopardy implements ActionListener {
 	private JButton createButton(String dollarAmount) {
 		
 		// Create a new JButton
-
+JButton button = new JButton();
 		// Set the text of the button to the dollarAmount
-
+button.setText(dollarAmount);
 		// Increment the buttonCount (this should make the layout vertical)
 
 		// Return your new button instead of the temporary button
