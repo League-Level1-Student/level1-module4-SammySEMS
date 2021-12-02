@@ -41,7 +41,7 @@ public class Jeopardy implements ActionListener {
 	private JLabel scoreBox = new JLabel("0");
 	private int buttonCount = 0;
 	private Clip jeopardyThemeClip;
-
+int firstAnswer = 6;
 
 
 	public void run() {
@@ -62,7 +62,7 @@ quizPanel.add(panel);
 		// 5. Add the quizPanel to the frame
 frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-firstButton.isShowing();
+//firstButton.isShowing();
 firstButton =createButton("100");
 		// 7. Add the firstButton to the quizPanel
 quizPanel.add(firstButton);
@@ -115,7 +115,7 @@ button.setText(dollarAmount);
 
 		// Return your new button instead of the temporary button
 
-		return new JButton("temporary button");
+		return new JButton("button");
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -125,17 +125,106 @@ button.setText(dollarAmount);
 
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
-
+if(buttonPressed == firstButton) {
+	
+	askQuestion(null, "6", 100);
+	String answer = JOptionPane.showInputDialog("What is (2+2*2)  Type answer in word form");
+	if(answer.equalsIgnoreCase("six")) {
+		score = score+100;
+		System.out.println("You are correct");
+		
+	firstButton.setText("");
+		
+	}
+	else {
+		System.out.println("You were incorrect the right answer is: ");
+		firstButton.setText("");
+		
+	}
+}
 			// Call the askQuestion() method
  
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
 
 		// If the buttonPressed was the secondButton
-
+if(buttonPressed == secondButton) {
+	
+	askQuestion(null, "negative one", 200);
+	String answer = JOptionPane.showInputDialog("What is (negative 3 minus a negative 2)  Type answer in word form");
+	if(answer.equalsIgnoreCase("negative one")) {
+		score = score+200;
+		System.out.println("You are correct");
+		secondButton.setText("");
+		
+	}
+	else {
+		System.out.println("You were incorrect the right answer is: negative one");
+		secondButton.setText("");
+	}
+}
 			// Call the askQuestion() method with a harder question
-
+if(buttonPressed == thirdButton) {
+	
+	askQuestion(null, "george washington", 400);
+	String answer = JOptionPane.showInputDialog("Who is the first president of the US ");
+	if(answer.equalsIgnoreCase("george washington")) {
+		score = score+400;
+		System.out.println("You are correct");
+	thirdButton.setText("");
+		
+	}
+	else {
+		System.out.println("You were incorrect the right answer is: george washington");
+		thirdButton.setText("");
+	}
+}
 		// Clear the text on the button that was pressed (set the button text to nothing)
-
+JButton fourButton = new JButton();
+if(buttonPressed == fourButton) {
+	
+	askQuestion(null, "-1", 200);
+	String answer = JOptionPane.showInputDialog("What is (---1*1) simplified");
+	if(answer.equalsIgnoreCase("-1")) {
+		score = score+600;
+		System.out.println("You are correct");
+		secondButton.setText("");
+		
+	}
+	else {
+		System.out.println("You were incorrect the right answer is: -1");
+		secondButton.setText("");
+	}
+}
+JButton fiveButton = new JButton();
+if(buttonPressed == fiveButton) {
+	
+	askQuestion(null, "0", 200);
+	String answer = JOptionPane.showInputDialog("What is 29*81-34+88-200*4*0 simplified");
+	if(answer.equalsIgnoreCase("0")) {
+		score = score+800;
+		System.out.println("You are correct");
+		secondButton.setText("");
+		
+	}
+	else {
+		System.out.println("You were incorrect the right answer is:0");
+		secondButton.setText("");
+	}}
+JButton sixButton = new JButton();
+if(buttonPressed == sixButton) {
+	
+	askQuestion(null, "1", 200);
+	String answer = JOptionPane.showInputDialog("What is 0 to the power of 0 simplified");
+	if(answer.equalsIgnoreCase("1")) {
+		score = score+1000;
+		System.out.println("You are correct");
+		secondButton.setText("");
+		
+	}
+	else {
+		System.out.println("You were incorrect the right answer is:1");
+		secondButton.setText("");
+	}}
 	}
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
@@ -143,7 +232,7 @@ button.setText(dollarAmount);
 		// Use the playJeopardyTheme() method to play music while the use thinks of an answer
 		
 		// Remove this temporary message and replace it with a pop-up that asks the user the question
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
+
 		
 		// Stop the theme music when they have entered their response. 
 		
@@ -160,7 +249,7 @@ button.setText(dollarAmount);
 			// Pop up a message to tell the user they were wrong and give them the correct answer
 
 		// Call the updateScore() method
-
+updateScore();
 	}
 
 	public void playJeopardyTheme() {
