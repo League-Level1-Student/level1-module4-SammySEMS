@@ -35,7 +35,10 @@ import javax.swing.JPanel;
 public class Jeopardy implements ActionListener {
 	private JButton firstButton;
 	private JButton secondButton;
-	private JButton thirdButton, fourthButton;
+	private JButton thirdButton;
+	private JButton fourButton;
+	private JButton fiveButton;
+	private JButton sixButton;
 	private JPanel quizPanel;
 	private int score = 0;
 	private JLabel scoreBox = new JLabel("0");
@@ -72,17 +75,20 @@ quizPanel.add(firstButton);
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
 secondButton=createButton("200");
+
 		// 10. Add the secondButton to the quizPanel
 quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
 firstButton.addActionListener(this);
 secondButton.addActionListener(this);	// 12. Write the code to complete the actionPerformed() method below
 
+
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
-		JButton thirdButton = new JButton();
-		JButton fourButton = new JButton();
-		JButton fiveButton = new JButton();
-		JButton sixButton = new JButton();
+		thirdButton = new JButton();
+		fourButton = new JButton();
+		fiveButton = new JButton();
+		 sixButton = new JButton();
+		
 		
 		thirdButton=createButton("400");
 		fourButton=createButton("600");
@@ -179,7 +185,7 @@ if(buttonPressed == thirdButton) {
 	}
 }
 		// Clear the text on the button that was pressed (set the button text to nothing)
-JButton fourButton = new JButton();
+
 if(buttonPressed == fourButton) {
 	
 	askQuestion(null, "-1", 200);
@@ -195,7 +201,7 @@ if(buttonPressed == fourButton) {
 		secondButton.setText("");
 	}
 }
-JButton fiveButton = new JButton();
+
 if(buttonPressed == fiveButton) {
 	
 	askQuestion(null, "0", 200);
@@ -210,7 +216,7 @@ if(buttonPressed == fiveButton) {
 		System.out.println("You were incorrect the right answer is:0");
 		secondButton.setText("");
 	}}
-JButton sixButton = new JButton();
+
 if(buttonPressed == sixButton) {
 	
 	askQuestion(null, "1", 200);
