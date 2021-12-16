@@ -5,14 +5,10 @@ import java.util.Random;
 public class TypingTutorRunner {
 public static void main(String[] args) {
 
-new	TypingTutor().typing();
 	
+		TypingTutor tutor = new TypingTutor();
+		tutor.setup(); 
 	
 }
-char generateRandomLetter() {
-    Random r = new Random();
-    return (char) (r.nextInt(26) + 'a');
-    currentLetter = generateRandomLetter();
-
-}
+	
 }
